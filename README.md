@@ -2,6 +2,17 @@
 by Vassil Atanassov, Jiatao Ding, Jens Kober, Ioannis Havoutis, Cosimo Della Santina
 
 
+If you use this repository in your work, consider citing:
+```
+@misc{atanassov2024curriculumbased,
+      title={Curriculum-Based Reinforcement Learning for Quadrupedal Jumping: A Reference-free Design}, 
+      author={Vassil Atanassov and Jiatao Ding and Jens Kober and Ioannis Havoutis and Cosimo Della Santina},
+      year={2024},
+      eprint={2401.16337},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
+```
 ## Video
 https://www.youtube.com/watch?v=nRaMCrwU5X8
 [![](https://img.youtube.com/vi/nRaMCrwU5X8/0.jpg)](https://www.youtube.com/watch?v=nRaMCrwU5X8)
@@ -36,3 +47,11 @@ To evaluate your policy you can play around with the settings in `scripts/test.p
 
 Disclaimers: Evaluating highly dynamic jumps on the real hardware can be dangerous, so carefully test policies in the simulation first. 
 Unfortunately, due to a reported issue with Isaac Gym operating on trimesh being non-deterministic you might observe variations between training runs (despite the same random seed). 
+
+## Acknowledgments
+Code-base is based on the following works:
+
+https://github.com/leggedrobotics/legged_gym
+
+https://github.com/Improbable-AI/walk-these-ways
+
