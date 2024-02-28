@@ -111,12 +111,12 @@ def test(args):
 
     # Commands
     env_cfg.commands.curriculum = False
-    env_cfg.commands.ranges.pos_dx_ini = [0.9,0.9]
-    env_cfg.commands.ranges.pos_dy_ini = [0.0,0.0]
+    # env_cfg.commands.ranges.pos_dx_ini = [0.9,0.9]
+    # env_cfg.commands.ranges.pos_dy_ini = [0.0,0.0]
     # env_cfg.commands.distances.des_yaw = torch.pi
     env_cfg.commands.randomize_yaw = False
     env_cfg.commands.upward_jump_probability = 0.
-    # env_cfg.commands.ranges.max_height_range = [0.5,0.5]
+
     env_cfg.env.throttle_to_real_time = False
     env_cfg.viewer.camera_track_robot = False
     env_cfg.viewer.ref_env = 0
@@ -203,10 +203,6 @@ def test(args):
     env.additional_termination_conditions = False
 
     for i in range(int(1*env.max_episode_length-3)):
-
-        if env_cfg.viewer.simulate_camera and i%2==0:
-            image_name = dir_name + str(i) + ".png"  
-            env.gym.write_camera_image_to_file(env.sim, env.envs[0], env.camera_handle, gymapi.IMAGE_COLOR, image_name)
 
         actions = policy(obs.detach())
         if i == 0:

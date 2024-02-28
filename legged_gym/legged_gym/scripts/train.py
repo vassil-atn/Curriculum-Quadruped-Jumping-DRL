@@ -52,9 +52,8 @@ def train(args):
 
     mode = "online"
 
-    wandb.init(project="RlJumpingAblationStudy", name=run_name,  group=args.group_name, mode=mode, dir="../../logs",tags=["task_" + args.task,env.cfg.task_name])
-    wandb.save(LEGGED_GYM_ENVS_DIR + "/go1/go1_config.py", policy="now")
-    wandb.save(LEGGED_GYM_ENVS_DIR + "/base/legged_robot.py", policy="now")
+    wandb.init(project="", name=run_name,  group=args.group_name, mode=mode, dir="../../logs",tags=["task_" + args.task,env.cfg.task_name])
+
 
     ppo_runner.learn(num_learning_iterations=train_cfg.runner.max_iterations, init_at_random_ep_len=True)
 
